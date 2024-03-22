@@ -1,19 +1,23 @@
 package com.example.clientappc.controller;
 
-import org.springframework.http.HttpStatus;
+import com.example.clientappc.client.GetRandomNumberFromB;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/first")
+@RequestMapping("/appc")
 public class TestController {
-    
-    @GetMapping("/test")
-    public ResponseEntity<String> getTestResponse() {
-        return new ResponseEntity("First Client Response", HttpStatus.OK);
-    }
 
+    @Autowired
+    GetRandomNumberFromB getRandomNumberFromB;
+
+    @GetMapping("/random_number")
+    public ResponseEntity<Number> getNumberResponse() {
+        return getRandomNumberFromB.randomNumber();
+    }
 }
+
 
