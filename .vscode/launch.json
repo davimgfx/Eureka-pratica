@@ -9,6 +9,36 @@
       "projectName": "server",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ClientAppAApplication<client-app-a>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.clientappa.ClientAppAApplication",
+      "projectName": "client-app-a",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ClientAppBApplication<client-app-b>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.clientappb.ClientAppBApplication",
+      "projectName": "client-app-b",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ClientAppCApplication<client-app-c>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.clientappc.ClientAppCApplication",
+      "projectName": "client-app-c",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }
