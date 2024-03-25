@@ -1,21 +1,22 @@
 package com.example.clientappa.controller;
 
-import org.springframework.http.HttpStatus;
+import com.example.clientappa.client.GetRandomNumberFromB;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import java.util.Random;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
-@RequestMapping("/first")
+@RequestMapping("/appa")
 public class TestController {
     
-    @GetMapping("/test")
-    public ResponseEntity<String> getTestResponse() {
-        Random random = new Random();
-        int numeroAleatorio = random.nextInt(11);
-        return new ResponseEntity(numeroAleatorio, HttpStatus.OK);
+    @Autowired
+    GetRandomNumberFromB getRandomNumberFromB;
+
+    @GetMapping("/random_number")
+    public ResponseEntity<Number> getNumberResponse() {
+        return getRandomNumberFromB.randomNumber();
     }
 
 }
